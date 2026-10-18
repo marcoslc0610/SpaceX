@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SpaceX Launches Explorer</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>🚀 Explorador de Lanzamientos SpaceX</h1>
+    </header>
+
+    <div id="error-container"></div>
+    <div id="spinner" class="spinner"></div>
+
+    <section class="stats" id="stats-container" style="display: none;">
+      <div>Total: <span id="stat-total">0</span></div>
+      <div>Exitosos: <span id="stat-success">0</span></div>
+      <div>Fallidos: <span id="stat-failed">0</span></div>
+      <div>Éxito: <span id="stat-percentage">0</span>%</div>
+    </section>
+
+    <section class="controls" id="controls-container" style="display: none;">
+      <input type="text" id="search-input" placeholder="Buscar misión..." />
+      <select id="filter-select">
+        <option value="all">Todos</option>
+        <option value="success">Exitosos</option>
+        <option value="failed">Fallidos</option>
+        <option value="pending">Pendientes</option>
+      </select>
+      <select id="sort-select">
+        <option value="desc">Más recientes primero</option>
+        <option value="asc">Más antiguos primero</option>
+      </select>
+      <button id="toggle-favs-view">Ver Favoritos (<span id="fav-count">0</span>)</button>
+    </section>
+
+    <main id="lanzamientos-grid" class="grid"></main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
